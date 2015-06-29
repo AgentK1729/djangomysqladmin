@@ -19,6 +19,9 @@ In settings.py, in INSTALLED_APPS, add the following line:
 In settings.py, in TEMPLATE_DIRS, add the following line:
 /path/to/project/djangoMySQLadmin/templates
 
+In settings.py, in TEMPLATE_DIRS, add the following line:
+/path/to/project/djangoMySQLadmin/templates
+
 In settings.py, in STATICFILES_DIRS, add the following line:
 /path/to/project/djangoMySQLadmin/static
 
