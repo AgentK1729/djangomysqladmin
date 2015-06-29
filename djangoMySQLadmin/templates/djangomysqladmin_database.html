@@ -1,0 +1,14 @@
+<html>
+	<head><title>django MySQL admin</title></head>
+
+	<body>
+		Here's the list of tables:<br>
+		<ul>
+			{% for table in tables %}
+				<li><a href = "/djangomysqladmin/view-table/?table={{table}}" target = "_blank">{{ table }}</a></li>
+			{% endfor %}
+		</ul>
+		<br>
+		<a href = "/djangomysqladmin/create-table/">Create a new table</a>
+	</body>
+</html>

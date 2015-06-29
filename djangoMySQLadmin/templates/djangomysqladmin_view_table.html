@@ -1,0 +1,27 @@
+<html>
+	<head><title>django MySQL admin</title>
+		<link href="{{ STATIC_URL }}/css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="{{ STATIC_URL }}/css/style.css" rel='stylesheet' type='text/css' />
+	</head>
+
+	<body>
+		<h1>{{ table }}</h1><br><br>
+		<b>Schema</b><br>
+		<table>
+			{% for row in schema %}
+				<tr>
+					<td>{{ row.name }}</td>
+					<td>{{ row.datatype }}</td>
+				</tr>
+			{% endfor %}
+		</table><br><br>
+		<b>Entries</b><br>
+		{% for entry in entries %}
+			{{ entry }}<br>
+		{% endfor %}
+		<br><br>
+		<a href = "/djangomysqladmin/insert-entry/?table={{table}}">Insert an entry</a><br>
+		<a href = "/djangomysqladmin/delete-entry/?table={{table}}">Delete an entry</a><br>
+		<a href = "/djangomysqladmin/update-entry/?table={{table}}">Update an entry</a><br>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+	<head><title>django MySQL admin</title></head>
+
+	<body>
+		<h1>{{ table }}</h1><br><br>
+		<b>Entries</b><br>
+		<table>
+			{% for entry in entries %}
+				<tr>
+					{% for i in entry %}
+						<td>{{ i.value }}</td>
+					{% endfor %}
+					<td>
+						<form action = "/djangomysqladmin/entry-deleted/" method = "get">
+							{% for i in entry %}
+								<input type = "hidden" name = "{{i.label}}" value = "{{i.value}}">
+							{% endfor %}
+							<input type = "hidden" name = "table" value = "{{table}}">
+							<input type = "submit" name = "delete" value = "Delete">
+						</form>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

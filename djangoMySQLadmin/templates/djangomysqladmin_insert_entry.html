@@ -1,0 +1,14 @@
+<html>
+	<head><title>django MySQL admin</title></head>
+
+	<body>
+		<h1>{{ table }}</h1><br><br>
+		<form action = "/djangomysqladmin/entry-inserted/" method = "get">
+			{% for label in labels %}
+				<input type = "text" name = "{{ label }}" placeholder = "{{ label }}"><br>
+			{% endfor %}
+			<input type = "hidden" name = "table" value = "{{ table }}">
+			<input type = "submit" value = "Insert" name = "insert">
+		</form>
+	</body>
+</html>

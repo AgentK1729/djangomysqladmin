@@ -1,0 +1,23 @@
+<html>
+	<head><title>django MySQL admin</title></head>
+
+	<body>
+		<h1>{{ table }}</h1><br><br>
+		<b>Entries</b><br>
+		<table>
+			{% for entry in entries %}
+				<tr>
+					<form action = "/djangomysqladmin/entry-updated/" method = "get">
+						{% for i in entry %}
+							<td><input type = "text" name = "{{i.label}}" value = "{{i.value}}"></td>
+						{% endfor %}
+						<td>
+							<input type = "hidden" name = "table" value = "{{table}}">
+							<input type = "submit" name = "update" value = "Update">
+						</td>
+					</form>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
